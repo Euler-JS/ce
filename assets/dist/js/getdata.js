@@ -226,23 +226,23 @@ criarConteudoDeProduto = function (codigo)
                 <div class="preview col-md-6">
                     
                     <div class="preview-pic tab-content">
-                      <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
-                      <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-                      <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-                      <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-                      <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+                      <div class="tab-pane active" id="pic-1"><img src="car.jpg" /></div>
+                      <div class="tab-pane" id="pic-2"><img src="car.jpg" /></div>
+                      <div class="tab-pane" id="pic-3"><img src="car.jpg" /></div>
+                      <div class="tab-pane" id="pic-4"><img src="car.jpg" /></div>
+                      <div class="tab-pane" id="pic-5"><img src="car.jpg" /></div>
                     </div>
                     <ul class="preview-thumbnail nav nav-tabs">
-                      <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                      <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                      <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                      <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                      <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                      <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="car.jpg" /></a></li>
+                      <li><a data-target="#pic-2" data-toggle="tab"><img src="car.jpg" /></a></li>
+                      <li><a data-target="#pic-3" data-toggle="tab"><img src="car.jpg" /></a></li>
+                      <li><a data-target="#pic-4" data-toggle="tab"><img src="car.jpg" /></a></li>
+                      <li><a data-target="#pic-5" data-toggle="tab"><img src="car.jpg" /></a></li>
                     </ul>
                     
                 </div>
                 <div class="details col-md-6">
-                    <h3 class="product-title">men's shoes fashion</h3>
+                    <h3 class="product-title">Toyota</h3>
                     <div class="rating">
                         <div class="stars">
                             <span class="fa fa-star checked"></span>
@@ -253,29 +253,27 @@ criarConteudoDeProduto = function (codigo)
                         </div>
                         <span class="review-no">41 reviews</span>
                     </div>
-                    <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                    <h4 class="price">current price: <span>$180</span></h4>
-                    <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                    <h5 class="sizes">sizes:
-                        <span class="size" data-toggle="tooltip" title="small">s</span>
-                        <span class="size" data-toggle="tooltip" title="medium">m</span>
-                        <span class="size" data-toggle="tooltip" title="large">l</span>
-                        <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-                    </h5>
-                    <h5 class="colors">colors:
-                        <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-                        <span class="color green"></span>
-                        <span class="color blue"></span>
-                    </h5>
+                    <p class="product-description">A Toyota é conhecida por produzir carros, no entanto tem muitas Empresas de outros ramos de atividade:
+
+                    -Produção e venda de barcos e respetivos motores e produção de empilhadores e outros equipamentos industriais.
+                    
+                    -Setor imobiliário. Desde 1975 constrói casas, estando em constante evolução o desenvolvendo de novas técnicas de construção, criação de condomínios, assim como projetos de habitação para arrendamento pela Toyota Housing Corporation que a partir da 2004 constituiu-se uma Empresa autónoma.</p>
+                    <h4 class="price">Preco actual: <span>23 000 MT</span></h4>
+                    <p class="vote"> <strong>Total no stock (34)</strong></p>
+                    
+                    
                     <div class="action">
-                        <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                        <button class="add-to-cart btn btn-default" type="button">Adicionar ao Carinho/button>
                         <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                     </div>
                 </div>
             </div>
         </div>
+    <button type="button" class="btn btn-secondary" style="margin-top: 2rem;" data-dismiss="modal">Close</button>
+
     </div>
 </div>
+
     `);
 }
 

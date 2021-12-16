@@ -150,17 +150,6 @@ function adicionarProduto() {
 
 criarProdutos = function (todosProdutos) {
 
-    /*
-
-        '<div class="demo-card-image mdl-card mdl-shadow--2dp">'+
-                                        '<div class="mdl-card__title mdl-card--expand"></div>'+
-                                        '<div class="mdl-card__actions">'+
-                                    '<span class="demo-card-image__filename">Image.jpg</span>'+
-                                    '</div>'+
-                        '</div>'+
-    */
-
-    let div1; var e0 = "";
     if (todosProdutosFiltros.length >= 1) {
         todosProdutosFiltros.forEach(element => {
 
@@ -182,22 +171,25 @@ criarProdutos = function (todosProdutos) {
                                 <div class="card-body">
                                     <h5 class="card-title">`+element.preco+`</h5>
                                     <p class="card-text">`+element.marca+`</p>
-                                    <a href="#" class="btn btn-primary">Ver Detalhes</a>
-                                    <button id="click_me" onclick="adicionarProduto()" style="border-radius:1px; width:100%; font-size:14px;" class="btn btn-primary">Ver Perfil</button>
+                
+                
                                 </div>
                                 </div>`);
 
-            let button_ = $('<button style="border-radius:1px; width:100%; font-size:14px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent bg-danger">Ver Perfil</button>');
+            let button_ = $('<button data-toggle="modal" data-target="#exampleModalLong" style="border-radius:1px; width:100%; font-size:14px;" class="btn btn-primary">Ver Detalhes</button>');
 
 
             //Para adicionar botao com funcionalidade
-            /*button_.on('click', () => {
-                //alert(element.id);
-                clickGo(element.id);
+            button_.on('click', () => {
+                // alert("Euler Alert");
+                // $('#myModal').on('shown.bs.modal', function () {
+                //     $('#myInput').trigger('focus')
+                //   })
+                // clickGo(element.id);
 
             });
 
-            tes.append(button_);*/
+            tes.append(button_);
 
 
             $('#produtos_container').append(tes);

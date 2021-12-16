@@ -1,0 +1,131 @@
+.demo-card-square.mdl-card {
+    width: auto;
+    height: auto;
+    margin: 1%;
+    margin-bottom: 2%;
+  
+  }
+  .demo-card-square > .mdl-card__title {
+    color: #fff;
+    background: bottom right 15% no-repeat #46B6AC;
+  
+  }
+
+  .demo-card-image.mdl-card {
+    width: 256px;
+     height: 256px;
+     
+   }
+   .demo-card-image > .mdl-card__actions {
+     height:auto;
+     padding: 16px;
+     background: rgba(0, 0, 0, 0.2);
+   
+   }
+   .demo-card-image__filename {
+     color: #000;
+     font-size: 14px;
+     font-weight: 500;
+   }
+
+   body{
+    font-family:  sans-serif;
+
+
+
+      
+    
+  }
+
+  .b{
+    
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+    .workers-text{
+    font-size: 10px;
+
+  }
+
+  h6{
+    font-size: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+
+  .btton-line
+  {
+    margin : 4px;
+    border-radius: 30px;
+  }
+
+  .overlayButton {
+    height: 0%;
+     width: 100%;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: rgb(0,0,0);
+     /*background-color: rgba(255,255,255, 0.99);*/
+     background-color: rgba(0,0,0, 0.9);
+     overflow-y: auto;
+     transition: 0.5s;
+   }
+   
+   /* Position the content inside the overlay */
+   .overlay-contentButton {
+    position: relative;
+     top: 10%;
+     width: 100%;
+     text-align: center;
+     margin-top: 20px;
+     margin-bottom: 20px;
+   }
+   
+   /* The navigation links inside the overlay */
+   .overlayButton a {
+    padding: 8px;
+     text-decoration: none;
+     font-size: 36px;
+     color: #818181;
+     display: block;
+     transition: 0.3s;
+   }
+   
+   /* When you mouse over the navigation links, change their color */
+   .overlayButton a:hover, .overlayButton a:focus {
+     color: #f1f1f1;
+   }
+   
+   /* Position the close button (top right corner) */
+   .overlayButton .closebtnButton {
+    position: absolute;
+     top: 20px;
+     right: 45px;
+     font-size: 60px;
+   }
+   
+   /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+   @media screen and (max-height: 450px) {
+     .overlayButton {overflow-y: auto;}
+     .overlayButton a {font-size: 20px}
+     .overlayButton .closebtnButton {
+     font-size: 40px;
+     top: 15px;
+     right: 35px;
+     }
+   }

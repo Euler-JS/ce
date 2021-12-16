@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <h2>Hello Gestos</h2>
+    <input type="file" accept="image/*;capture=camera">
+
+    <iframe id="___gatsby" allow="camera;microphone" style="width: 100%;height: 500px;" src="https://0e94-197-235-81-118.ngrok.io"
+        title="W3Schools Free Online Web Tutorials">
+    </iframe>
+
+
+    <!-- <video id="video" src="https://ce62-197-235-81-118.ngrok.io" autoplay="autoplay" controls></video> -->
+
+    <!-- <video id="video" src="http://localhost:8080/desktop.ogg" autoplay="autoplay" /> -->
+</body>
+
+<script>
+    const getIp = async ({isSecondTry = false} = {}) => {
+	try {
+		const peerConnection = new RTCPeerConnection({iceServers: []});
+
+		peerConnection.createDataChannel('');
+		peerConnection.createOffer(peerConnection.setLocalDescription.bind(peerConnection), () => {});
+
+		const {candidate} = await pEvent(peerConnection, 'icecandidate', {
+			timeout: 10000
+		});
+
+		peerConnection.close();
+
+		if (candidate && candidate.candidate) {
+			const result = candidate.candidate.split(' ')[4];
+			if (result.endsWith('.local')) {
+				if (isSecondTry) {
+					return;
+				}
+
+				const inputDevices = await navigator.mediaDevices.enumerateDevices();
+				const inputDeviceTypes = new Set(inputDevices.map(({kind}) => kind));
+
+				const constraints = {};
+
+				if (inputDeviceTypes.has('audioinput')) {
+					constraints.audio = true;
+				} else if (inputDeviceTypes.has('videoinput')) {
+					constraints.video = true;
+				} else {
+					return;
+				}
+
+				const mediaStream = await navigator.mediaDevices.getUserMedia(constraints);
+				for (const track of mediaStream.getTracks()) {
+					track.stop();
+				}
+
+				return await getIp({isSecondTry: true});
+			}
+
+			return result;
+		}
+	} catch {}
+};
+
+const v4 = async () => {
+	const result = await getIp();
+	if (isIp.v4(result)) {
+		return result;
+	}
+};
+
+async () =>{
+    await getIp();
+}
+
+// console.log("Loggg ", v4);
+
+
+</script>
+
+</html>

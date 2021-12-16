@@ -112,18 +112,8 @@ function adicionarProduto() {
         total_unidades: "43",
         unidades_vendidas: "1",
         imagem_principal: "url1",
-        outras_imagens: "url2"
-
-
-        /* nomeU : "Joao",
-        numeroU : "846151124",
-        id : "000",
-        localU : "Sofala, Cidade Maputo",
-        trabalhoU : "Programador",
-        experienciaDeTrabalhoU : "Android App; WebApp",
-        emailU : "joaoalbertojose96@gmail.com",
-        linkPerfil : "",
-        linkTrabalhoU : ""*/
+        outras_imagens: "url2",
+        visualizacoes: '11',
 
     }
 
@@ -186,7 +176,7 @@ criarProdutos = function (todosProdutos) {
                 //     $('#myInput').trigger('focus')
                 //   })
                 // clickGo(element.id);
-                criarConteudoDeProduto(element.codigo);
+                criarConteudoDeProduto(element);
 
             });
 
@@ -216,7 +206,7 @@ criarProdutos = function (todosProdutos) {
 
 }
 
-criarConteudoDeProduto = function (codigo)
+criarConteudoDeProduto = function (element)
 {
     $('#conteudo-modal').append(`
     <div class="container">
@@ -242,7 +232,7 @@ criarConteudoDeProduto = function (codigo)
                     
                 </div>
                 <div class="details col-md-6">
-                    <h3 class="product-title">Toyota</h3>
+                    <h3 class="product-title">`+element.marca+`</h3>
                     <div class="rating">
                         <div class="stars">
                             <span class="fa fa-star checked"></span>
@@ -259,11 +249,11 @@ criarConteudoDeProduto = function (codigo)
                     
                     -Setor imobiliário. Desde 1975 constrói casas, estando em constante evolução o desenvolvendo de novas técnicas de construção, criação de condomínios, assim como projetos de habitação para arrendamento pela Toyota Housing Corporation que a partir da 2004 constituiu-se uma Empresa autónoma.</p>
                     <h4 class="price">Preco actual: <span>23 000 MT</span></h4>
-                    <p class="vote"> <strong>Total no stock (34)</strong></p>
+                    <p class="vote"> <strong>Total no stock (`+element.total_unidades+`)</strong></p>
                     
                     
                     <div class="action">
-                        <button class="add-to-cart btn btn-default" type="button">Adicionar ao Carinho/button>
+                        <button class="add-to-cart btn btn-default" type="button">Adicionar ao Carinho</button>
                         <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                     </div>
                 </div>

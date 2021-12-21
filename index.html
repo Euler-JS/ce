@@ -14,6 +14,9 @@
   <!-- Bootstrap core CSS -->
   <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
   <link href="assets/dist/css/detalhes-produto.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+
   <!-- <link href="assets/dist/css/workersCard.css" rel="stylesheet">
   <link href="assets/dist/css/blog.css" rel="stylesheet">
   <link href="assets/dist/css/slideperfil.css" rel="stylesheet">
@@ -72,6 +75,26 @@
         font-size: 3.5rem;
       }
     }
+
+    .rounded {
+    border-radius: 1rem
+}
+
+.nav-pills .nav-link {
+    color: #555
+}
+
+.nav-pills .nav-link.active {
+    color: white
+}
+
+input[type="radio"] {
+    margin-right: 5px
+}
+
+.bold {
+    font-weight: bold
+}
   </style>
 
 
@@ -81,6 +104,8 @@
   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
   <!-- Custom styles for this template -->
   <link href="assets/dist/css/card.css" rel="stylesheet">
+
+  
 
 </head>
 
@@ -121,10 +146,18 @@
             <a class="nav-link b" style="color:white" href="sobre.html">Sobre nós</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item justify-content-end">
             <a class="nav-link b" style="color:white" href="login.html">Login</a>
           </li>
         </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <i style="color: antiquewhite;" class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span id="totalCarinho" style="color: antiquewhite; margin-left: 10px;">0</span>
+          <!-- <li class="nav-item">
+              <a class="nav-linkb" href="#">Link</a>
+          </li> -->
+      </ul>
 
 
 
@@ -162,6 +195,23 @@
   <!-- Modal -->
 <div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-body" id="conteudo-modal" >
+        
+  </div>
+  <div class="modal-dialog" role="document" style="width: 200%; display:none;">
+    <div class="modal-content">
+     
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade"  id="exampleModalLong-pagamentos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle-pagamentos" aria-hidden="true">
+  <div class="modal-body" id="conteudo-modal-pagamentos" >
         
   </div>
   <div class="modal-dialog" role="document" style="width: 200%; display:none;">
@@ -235,14 +285,14 @@
 
   <script type="text/javascript" src="assets/dist/js/jquery.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 
-    </script>
+    </script> -->
 
 
 
-  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+  <!-- <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script> -->
   <script src="assets/dist/js/bootstrap.bundle.js"></script>
 
   <!--<script type="text/javascript" src="auth.js"></script>-->

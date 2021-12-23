@@ -345,7 +345,7 @@ criarTrabalhadores = function(todosUtilizadores)
 
 				document.getElementById('progressWorkers').style.display = 'none';
 				document.getElementById('navBarWorkers').style.visibility = 'visible';
-				document.getElementById('statusLoadWorkers').innerHTML = "Workers4you";
+				document.getElementById('statusLoadWorkers').innerHTML = "AUTO TUNGAZA";
 				//todosUtilizadores = [];
 
 			});
@@ -354,7 +354,7 @@ criarTrabalhadores = function(todosUtilizadores)
 		{
 			document.getElementById('progressWorkers').style.display = 'none';
 			document.getElementById('navBarWorkers').style.visibility = 'visible';
-			document.getElementById('statusLoadWorkers').innerHTML = "Workers4you";
+			document.getElementById('statusLoadWorkers').innerHTML = "AUTO TUNGAZA";
 			alert("Ups!.. Não há resultado para sua busca.")
 		}
 	

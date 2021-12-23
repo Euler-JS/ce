@@ -189,7 +189,7 @@ criarProdutos = function (todosProdutos) {
 
             // document.getElementById('progressWorkers').style.display = 'none';
             // document.getElementById('navBarWorkers').style.visibility = 'visible';
-            // document.getElementById('statusLoadWorkers').innerHTML = "Workers4you";
+            // document.getElementById('statusLoadWorkers').innerHTML = "AUTO TUNGAZA";
             //todosUtilizadores = [];
 
         });
@@ -197,7 +197,7 @@ criarProdutos = function (todosProdutos) {
     } else {
         // document.getElementById('progressWorkers').style.display = 'none';
         // document.getElementById('navBarWorkers').style.visibility = 'visible';
-        // document.getElementById('statusLoadWorkers').innerHTML = "Workers4you";
+        // document.getElementById('statusLoadWorkers').innerHTML = "AUTO TUNGAZA";
         alert("Ups!.. Não há resultado para sua busca.")
     }
 

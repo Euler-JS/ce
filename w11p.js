@@ -1744,7 +1744,6 @@ window.onload = function startContinuousArtyom() {
         {
             indexes: ["continue a leitura", "leia de novo", "ler d novo", "ler novamente", "repetir a leitura"],
             action: function (i) {
-                alert("Minha posicao "+posicao)
                 lerConteudo(posicao)
             }
         }
@@ -1951,21 +1950,23 @@ window.onload = function startContinuousArtyom() {
 
 
 loadMainArtyomScript();
-function lerConteudo(posicao) {
-    if (body_text[posicao].trim() != "") {
-        artyom.say(body_text[posicao],
+function lerConteudo(posicao_recebida) {
+    if (body_text[posicao_recebida].trim() != "") {
+        
+        artyom.say(body_text[posicao_recebida],
             {
                 onStart: function () {
                     setTimeout(function () {
                         // Allow to process commands again
-                        console.log("On Start reeding");
+                        console.log("On Start reeding conteudo");
                         artyom.obey();
-                        // artyom.shutUp();
+                        
                     }, 2000);// wait 2 seconds
                 },
                 onEnd: function () {
-                    posicao = posicao + 1
+                    posicao = posicao_recebida + 1
                     if (posicao <= body_text.length - 1) {
+                        console.log("Nova posicao ", posicao);
                         lerConteudo(posicao)
                     }
                 }

@@ -1964,7 +1964,7 @@ function lerConteudo(posicao) {
                 },
                 onEnd: function () {
                     posicao = posicao + 1
-                    if (posicao <= body_text.length) {
+                    if (posicao <= body_text.length - 1) {
                         lerConteudo(posicao)
                     }
                 }

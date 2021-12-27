@@ -1485,11 +1485,33 @@ const artyom = new Artyom();
 //Configuracao de alguns dados processados para o Artyom
 let body_text = document.body.innerText.split('\n');
 let posicao = 0;
+let titulo;
+let menu;
+let rodape;
+
+try {
+    titulo = document.title
+} catch (error) {
+    titulo = "Em branco"
+}
+
+try {
+    menu = document.getElementsByTagName("nav")[0].innerText
+} catch (error) {
+    menu = "Em branco"
+}
+
+try {
+    rodape = document.getElementsByTagName("footer")[0].innerText
+} catch (error) {
+    titulo = "Em branco"
+}
+
 let documentData =
 {
-    titulo: document.title,
-    menu: document.getElementsByTagName("nav")[0].innerText,
-    rodape: document.getElementsByTagName("footer")[0].innerText
+    titulo: titulo,
+    menu: menu,
+    rodape: rodape
 }
 
 

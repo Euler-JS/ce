@@ -1744,7 +1744,7 @@ window.onload = function startContinuousArtyom() {
         {
             indexes: ["continue a leitura", "leia de novo", "ler d novo", "ler novamente", "repetir a leitura"],
             action: function (i) {
-                alert("Minha posicao ",posicao)
+                alert("Minha posicao "+posicao)
                 lerConteudo(posicao)
             }
         }

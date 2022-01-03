@@ -4,6 +4,7 @@ var workerTrabalhosPic;
 let worskImg = [];
 var simpleExperiencia;
 let emailVerificado = false;
+let letras = ["A", "B", "C", "D", "Z", "XC", "SA", "SW", "D", "EW", "PO", "KL", "D", "KK", "AS", "DE", "EWQ", "DCV", "LK", "OI", "OLKJ", "DS", "WA"]
 
 //var email
 var idUser;
@@ -52,10 +53,10 @@ const clickGo = function (a) {
 
 	worskImg = $('<div class="row  w3-card  w3-white w3-container "> ');
 	testando = '<div class="row w3-white w3-container "> ';
-	let button_closePerfil = $('<div class="w3-card w3-center w3-container w3-white" style="width:100%;">' +
+	let button_closePerfil = $('<div" style="width:100%;">' +
 		'<progress id="uploaderFull" value="0" max="100" style="display:none;width:100%;">0%</progress>' +
 		'<input type="file" id="inputFileFull" multiple="multiple"  accept="image/*" value="uploaderFull"  style="display:none;">' +
-		'<label for="inputFileFull" class="w3-card w3-button" style="color:white; background-color:#f5af09;margin-bottom:5%;">Adicionar Foto de Trabalho</label>' +
+		'<label for="inputFileFull" class="w3-card w3-button" style="color:white; background-color:#f5af09;margin-bottom:5%; width: 100%">Adicionar Foto de Trabalho</label>' +
 		'</div>');
 	let button_closePerfil1 = $('<div class="container">' +
 		'<span onclick="clickClose()" class="closebtn-galeria">&times;</span>' +
@@ -181,8 +182,59 @@ const clickGo = function (a) {
 				// 	'<i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Fotos de Trabalhos</h2></div></div></div><div class="w3-twothird">');
 				// perfil.append(worskImg);
 
-				$('#idPerfil').append(perfil);
+				perfil.append(`
+				<div class="form-group">
+					<label for="marca">Marca</label>
+					<input type="text" class="form-control" id="marca" placeholder="Digite a marca">
+			  	</div>
 
+				  <div class="form-group">
+					<label for="preco">Preco</label>
+					<input type="text" class="form-control" id="preco"  placeholder="Digite o preco">
+			  	</div>
+			  
+				  <div class="form-group">
+				  <label for="unidades">Unidades</label>
+				  <input type="text" class="form-control" id="unidades"  placeholder="Digite o numero de unidades disponiveis">
+				</div>
+
+
+				<div class="form-group">
+				<label for="imagem_principal">Imagem principal</label>
+				<input readonly type="text" class="form-control" id="imagem_principal"  placeholder="imagem principal">
+			  </div>
+
+			  <div class="form-group">
+			  <label for="outras_imagens">Outras imagens</label>
+			  <input readonly type="text" class="form-control" id="outras_imagens"  placeholder="Outras imagens">
+			</div>
+			  
+				`);
+
+				//Para adicionar apenas uma foto de produto
+				perfil.append(`
+					<div>
+						<progress id="uploader" value="0" max="100" style="display:none;">0%</progress>
+						<input type="file" id="inputFilePerfil" accept="image/*" value="upload" style="display:none;">
+						<label for="inputFilePerfil" class="w3-card w3-button" style="color:white; background-color:#f5af09; width: 100%">Escolher Foto Principal</label>
+					</div>
+				`)
+
+				//Para Adicionar outras fotos de carros
+				perfil.append(button_closePerfil)
+				perfil.append(`<div>
+				<button style="width: 100%;margin-bottom: 4rem;" type="submit" onclick="adicionarProduto()" class="btn btn-primary">Adicionar Produto</button>
+				</div>`)
+
+				// perfil.append(`
+				// <div class="w3-card w3-center w3-container w3-white" style="width:100%;">
+				// <progress id="uploaderFull" value="0" max="100" style="display:none;width:100%;">0%</progress>
+				// <input type="file" id="inputFileFull" multiple="multiple"  accept="image/*" value="uploaderFull"  style="display:none;">
+				// <label for="inputFileFull" class="w3-card w3-button" style="color:white; background-color:#f5af09;margin-bottom:5%;">Adicionar Foto de Trabalho</label>
+				// </div>
+				// `)
+				$('#idPerfil').append(perfil);
+				
 
 
 
@@ -227,6 +279,7 @@ const clickGo = function (a) {
 
 				var uploader = document.getElementById('uploader');
 				var fileButton = document.getElementById('inputFile');
+				var fileButton2 = document.getElementById('inputFilePerfil');
 
 				var uploaderFull = document.getElementById('uploaderFull');
 				var fileButtonFull = document.getElementById('inputFileFull');
@@ -293,6 +346,85 @@ const clickGo = function (a) {
 								document.getElementById('uploader').style.display = 'none';
 								console.log('File available at', downloadURL);
 								updatePic(downloadURL);
+							});
+						});
+					//var storageRef = firebase.storage().ref('agora/img/'+file.name);
+					//var task = storageRef.put(file);
+					/*task.on('state_changed', function progress(snapshot) {
+				var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+				uploader.value = percentage;
+
+				  }, function error(err) {
+
+
+				  },function complete() {
+
+				  });*/
+				});
+
+				fileButton2.addEventListener('change', function (e) {
+					var file = e.target.files[0];
+
+
+					//var file = ...
+
+					// Create the file metadata
+					var metadata = {
+						contentType: 'image/jpeg'
+					};
+
+					var storageRef = firebase.storage().ref('worker4you/perfil/carroP'+letras[Math.floor(Math.random() * (letras.length - 1))] + Date.now());
+					//var task = storageRef.put(file);
+
+					//var storage = firebase.storage();
+
+					// Upload file and metadata to the object 'images/mountains.jpg'
+					var uploadTask = storageRef.child(workerSelecionado).put(file, metadata);
+
+					// Listen for state changes, errors, and completion of the upload.
+					uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+						function (snapshot) {
+							// Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+							document.getElementById('uploader').style.display = 'block';
+							var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+							uploader.value = progress;
+							console.log('Upload is ' + progress + '% done');
+							switch (snapshot.state) {
+								case firebase.storage.TaskState.PAUSED: // or 'paused'
+									console.log('Upload is paused');
+									break;
+								case firebase.storage.TaskState.RUNNING: // or 'running'
+									console.log('Upload is running');
+									break;
+							}
+						}, function (error) {
+
+							// A full list of error codes is available at
+							// https://firebase.google.com/docs/storage/web/handle-errors
+							switch (error.code) {
+								case 'storage/unauthorized':
+									// User doesn't have permission to access the object
+									console.log("User doesn't have permission to access the object");
+									break;
+
+								case 'storage/canceled':
+									// User canceled the upload
+									console.log("User canceled the upload");
+									break;
+
+								//...
+
+								case 'storage/unknown':
+									console.log("Unknown error occurred, inspect error.serverResponse");
+									break;
+							}
+						}, function () {
+							// Upload completed successfully, now we can get the download URL
+							uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+								document.getElementById('uploader').style.display = 'none';
+								console.log('File available at', downloadURL);
+								// updatePic(downloadURL);
+								$('#imagem_principal').val(downloadURL)
 							});
 						});
 					//var storageRef = firebase.storage().ref('agora/img/'+file.name);
@@ -700,7 +832,8 @@ function newU(file, actual, e, contador) {
 
 				db.collection('utilizadores').doc(workerSelecionado).update({ linkTrabalhoU: downloadURL + ';' + actual }).
 					then(() => {
-						workerTrabalhosPic = downloadURL + ';' + actual;
+						// workerTrabalhosPic = downloadURL + ';' + actual;
+						workerTrabalhosPic = downloadURL + ';';
 						document.getElementById('uploaderFull').style.display = 'none';
 						console.log('File available at', downloadURL);
 
@@ -725,6 +858,8 @@ function newU(file, actual, e, contador) {
 							newU(file, workerTrabalhosPic, e, contador);
 
 						}
+
+						$('#outras_imagens').val(workerTrabalhosPic)
 					}
 
 
@@ -953,6 +1088,44 @@ function novaEx(ar) {
 }
 
 //Fim Actualizar numero  
+
+//Adicionar Produto
+function adicionarProduto() {
+    // var user = firebase.auth().currentUser;
+    // console.log(user);
+    // var idU = idUser;
+
+    const newUser =
+    {
+
+        codigo: "" + letras[Math.floor(Math.random() * (letras.length - 1))] + Date.now(),
+        compradores: "123",
+        id_publicador: "" + idUser,
+        marca: ""+$('#marca').val(),
+        preco: ""+$('#preco').val(),
+        total_unidades: ""+$('#unidades').val(),
+        unidades_vendidas: "0",
+        imagem_principal: ""+$('#imagem_principal').val(),
+        outras_imagens: ""+$('#outras_imagens').val(),
+        visualizacoes: '0',
+        carinho:""
+
+    }
+
+
+
+    db.collection('produtos').doc("" + newUser.codigo).set(newUser).then(() => {
+        console.log('Produto adicionado');
+		alert("Produto adicionado")
+        // document.getElementById('beWorker').style.display = 'none';
+        // renderProdutos("todos");
+
+
+    }).catch(error => {
+		alert("Ocorreu um erro")
+        console.log('Ocorreu um erro', error);
+    })
+}
 
 
 

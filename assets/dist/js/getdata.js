@@ -156,10 +156,10 @@ criarProdutos = function (todosProdutos) {
             // 	pf = element.linkPerfil;
             // }
 
-
+            console.log(element.imagem_principal);
             let tes = $(`<div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
                                 <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-                                <img class="card-img-top" src="car.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="`+element.imagem_principal+`" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">`+element.preco+`</h5>
                                     <p class="card-text">`+element.marca+`</p>
@@ -210,6 +210,9 @@ criarProdutos = function (todosProdutos) {
 
 criarConteudoDeProduto = function (element)
 {
+    $('#conteudo-modal').empty()
+    // console.log(element);
+    
     $('#conteudo-modal').append(`
     <div class="container">
     <div class="card">
@@ -217,19 +220,15 @@ criarConteudoDeProduto = function (element)
             <div class="wrapper row">
                 <div class="preview col-md-6">
                     
-                    <div class="preview-pic tab-content">
-                      <div class="tab-pane active" id="pic-1"><img src="car.jpg" /></div>
-                      <div class="tab-pane" id="pic-2"><img src="car.jpg" /></div>
-                      <div class="tab-pane" id="pic-3"><img src="car.jpg" /></div>
-                      <div class="tab-pane" id="pic-4"><img src="car.jpg" /></div>
-                      <div class="tab-pane" id="pic-5"><img src="car.jpg" /></div>
+                    <div class="preview-pic tab-content" id="container-pic">
+                      <div class="tab-pane active" ><img id="showImage" src="`+element.imagem_principal+`" /></div>
+                      
+                      
+                     
                     </div>
-                    <ul class="preview-thumbnail nav nav-tabs">
-                      <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="car.jpg" /></a></li>
-                      <li><a data-target="#pic-2" data-toggle="tab"><img src="car.jpg" /></a></li>
-                      <li><a data-target="#pic-3" data-toggle="tab"><img src="car.jpg" /></a></li>
-                      <li><a data-target="#pic-4" data-toggle="tab"><img src="car.jpg" /></a></li>
-                      <li><a data-target="#pic-5" data-toggle="tab"><img src="car.jpg" /></a></li>
+                    <ul class="preview-thumbnail nav nav-tabs" id="container-li">
+
+                      <li id="princiaplImageShow" class="active"><a data-target="#show" data-toggle="tab"><img src="`+element.imagem_principal+`" /></a></li>
                     </ul>
                     
                 </div>
@@ -250,7 +249,7 @@ criarConteudoDeProduto = function (element)
                     -Produção e venda de barcos e respetivos motores e produção de empilhadores e outros equipamentos industriais.
                     
                     -Setor imobiliário. Desde 1975 constrói casas, estando em constante evolução o desenvolvendo de novas técnicas de construção, criação de condomínios, assim como projetos de habitação para arrendamento pela Toyota Housing Corporation que a partir da 2004 constituiu-se uma Empresa autónoma.</p>
-                    <h4 class="price">Preco actual: <span>23 000 MT</span></h4>
+                    <h4 class="price">Preco actual: <span>`+element.preco+`</span></h4>
                     <p class="vote"> <strong>Total no stock (`+element.total_unidades+`)</strong></p>
                     
                     
@@ -267,6 +266,40 @@ criarConteudoDeProduto = function (element)
 </div>
 
     `);
+
+    
+    let cont = 0
+    element.outras_imagens.split(';').forEach(element => {
+        // $('#princiaplImageShow').on('click', () => {
+            
+        //     $('#showImage').attr('src', element.element.imagem_principal);
+        //     // console.log("clicou ",cont);
+    
+        // });
+
+        $('#container-pic').append(
+            `
+            <div class="tab-pane" id="`+cont+`"><img src="`+element+`" /></div>
+            `
+        )
+
+        
+
+        $('#container-li').append(
+            `
+            <li id="li`+cont+`"><a data-target="#showImage"  data-toggle="tab"><img src="`+element+`" /></a></li>
+            `
+        )
+
+        $('#li'+cont).on('click', () => {
+            
+            $('#showImage').attr('src', element);
+            console.log("clicou ",cont);
+
+        });
+
+        cont = cont + 1
+    });
 
     let button_pagar = $('<button data-toggle="modal" data-target="#exampleModalLong-pagamentos" class="add-to-cart btn btn-default" type="button">Efectuar pagamento</button>');
 
@@ -411,9 +444,10 @@ const getCarinho = function()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
+            try {
             console.log(doc.id, " => ", doc.data().carinho);
             meuCarinho = (doc.data().carinho).split(",");
-            try {
+            
                 $('#totalCarinho').text(meuCarinho.length); 
             } catch (error) {
                 $('#totalCarinho').text("0");

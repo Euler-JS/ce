@@ -7,6 +7,81 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+
+<style>
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.52857143;
+  color: #515253;
+  background-color: #ddd;
+  margin-top:20px;
+}
+
+.widget .panel, .widget.panel {
+  overflow: hidden;
+}
+
+.widget {
+  margin-bottom: 20px;
+  border: 0;
+}
+
+.bg-gray-darker {
+  background-color: #232735;
+  color: #fff!important;
+}
+
+.half-float {
+  position: relative;
+  margin-bottom: 65px;
+}
+
+.half-float .half-float-bottom, .half-float .half-float-top {
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  z-index: 2;
+}
+
+.thumb128 {
+  width: 128px!important;
+  height: 128px!important;
+}
+
+.half-float+* {
+  margin-top: -55px;
+  padding-top: 65px;
+}
+
+.m0 {
+  margin: 0!important;
+}
+
+.bg-gray-dark {
+  background-color: #3a3f51;
+  color: #fff!important;
+}
+
+.row-table {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.row-table>[class*=col-] {
+  display: table-cell;
+  float: none;
+  table-layout: fixed;
+  vertical-align: middle;
+
+}
+</style>
 <body id="myPage">
 
 <!-- Sidebar on click -->
@@ -61,208 +136,89 @@
 
 </nav>
 
+
+<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+<div class="container bootdey">
+<div class="row">
+   <div class="col-md-6">
+      <!-- START widget-->
+      <div class="panel widget">
+         <div class="half-float">
+            <img src="p1.jpeg" alt="" class="img-responsive myImg" style="height: 718px">
+            <div class="half-float-bottom">
+               <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image" class="img-thumbnail img-circle thumb128">
+            </div>
+         </div>
+         <div class="panel-body text-center">
+            <h3 class="m0">Pedro Manuel Tungadza</h3>
+            <h5 class="m0">Código de estudande : 181032051037</h5>
+            <p class="text-muted">Desenvolvedor</p>
+            <p>Trabalho de comércio eletrônico -- 2021</p>
+         </div>
+         <div class="panel-body text-center bg-gray-dark">
+            <div class="row row-table">
+               <div class="col-xs-4">
+                  <h3 class="m0">213</h3>
+                  <p class="m0">Commits</p>
+               </div>
+               <div class="col-xs-4">
+                  <h3 class="m0">11</h3>
+                  <p class="m0">Likes</p>
+               </div>
+               <div class="col-xs-4">
+                  <h3 class="m0">78</h3>
+                  <p class="m0">Following</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END widget-->
+   </div>
+   <div class="col-md-6">
+      <!-- START widget-->
+      <div class="panel widget">
+         <div class="half-float">
+            <img src="p2.jpeg" alt="" class="img-responsive myImg" style="height: 718px">
+            <div class="half-float-bottom">
+               <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Image" class="img-thumbnail img-circle thumb128">
+            </div>
+         </div>
+         <div class="panel-body text-center">
+            <h3 class="m0">Nelson Fazenda</h3>
+            <h5 class="m0">Código de estudande : </h5>
+            <p class="text-muted">Desenvolvedor </p>
+            <p>Trabalho de comércio eletrônico -- 2021.</p>
+         </div>
+         <div class="panel-body text-center bg-gray-dark">
+            <div class="row row-table">
+               <div class="col-xs-4">
+                  <h3 class="m0">310</h3>
+                  <p class="m0">Commits</p>
+               </div>
+               <div class="col-xs-4">
+                  <h3 class="m0">17</h3>
+                  <p class="m0">Likes</p>
+               </div>
+               <div class="col-xs-4">
+                  <h3 class="m0">5</h3>
+                  <p class="m0">Following</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END widget-->
+   </div>
+  
+</div>
+</div>
+
+
+
 <!-- Image Header -->
-<div class="w3-display-container w3-animate-opacity">
-  <img src="w26.png" alt="boat" style="width:100%;min-height:auto;max-height:600px;">
-  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Olá">Euler Corporation</button>
-  </div>
-</div>
-
-<!-- Modal -->
-<div id="id01" class="w3-modal">
-  <div class="w3-modal-content w3-card-4 w3-animate-top">
-    <header class="w3-container w3-teal w3-display-container"> 
-      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-      <h3>Olá, A Euler Corporation pode ser a solução pra ti..</h3>
-      <h5>Desenvolvemos Sistemas Informáticos para ti. <i class="fa fa-smile-o"></i></h5>
-    </header>
-    <div class="w3-container">
-      <img src="assets/img/icon/eucorp.jpg" style="width: 150px; height: auto; " class="bd-placeholder-img rounded-circle">
-    </div>
-    <footer class="w3-container w3-teal">
-      <p>#Euler Corporation</p>
-    </footer>
-  </div>
-</div>
-
-<!-- Team Container -->
-<div class="w3-container w3-padding-64 w3-center" id="team">
-<h2>Nossos serviços</h2>
-<p>A Euler Corporation é focalizada em Desenvolvimento de Softwares</p>
-
-<div class="w3-row"><br>
-
-<div class="w3-quarter">
-  <img src="assets/img/icon/android.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-  <!--<h3>Johnny Walker</h3>-->
-  <p>Desenvolvemos Aplicativos Android</p>
-</div>
-
-<div class="w3-quarter">
-  <img src="assets/img/icon/webdev.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-  
-  <p><br>Desenvolvemos WebSites</p>
-</div>
-
-<div class="w3-quarter">
-  <img src="assets/img/icon/webApp.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-  
-  <p>Desenvolvemos Aplicativos Web / WebApp</p>
-</div>
-
-<div class="w3-quarter">
-  <img src="assets/img/icon/java1.png" alt="Boss" style="width:45%;" class="w3-circle w3-hover-opacity">
-  
-  <p><br>Desenvolvemos Sistenas Java Desktop</p>
-</div>
-
-</div>
-</div>
-
-<!-- Work Row -->
-<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
-
-<div class="w3-quarter">
-<h2>Euler Corporation</h2>
-<p>Euler Corporation é uma empresa que trabalha na área de informática, abrangendo serviços de Manutenção e Reparação de Computadores, Desenvolvimento de Aplicativos Android, Sistemas para computadores, Criamos Websites e mais..</p>
-</div>
-
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="assets/aboutImg/moz5.png" alt="Snow" style="width:100%">
-  <div class="w3-container">
-  <h3>MoZeventos</h3>
-  <p>Com esse aplicativo você poderá ter informações sobre Shows, Evangelho, Cinemas, Teatro, Futebol e mais outras categorias de eventos a ter lugar na tua cidade, e em todo pais.
-Em ainda podes ter novidades sobre eventos ainda por acontecer ou que já sucederam.</p>
-  </div>
-  </div>
-</div>
-
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="assets/aboutImg/vh2.png" alt="Lights" style="width:100%">
-  <div class="w3-container">
-  <h3>VHelper</h3>
-  <p>A aplicação Vodacom Helper que te ajuda a converter e enviar megabits🤔😱, fazer jackpot de SMS😑😱, de crédito🤨, e superjackpot😱......acesso rápido ao saldo, MPesa e muito mais.</p>
-  
-  </div>
-  </div>
-</div>
-
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="assets/aboutImg/mcel1.png" alt="Mountains" style="width:100%">
-  <div class="w3-container">
-  <h3>MHelper</h3>
-  <p>É uma aplicação Android, que permite ao usuário poder converter ou enviar megabits com apenas alguns cliques, e trás oportunidade ao utilizador de poder estar a par das Novidades e serviços que estão na MCel.</p> 
-  </div>
-  </div>
-</div>
-
-</div>
-
-<div class="w3-row-padding w3-padding-64 w3-theme-l8" id="work">
-  <h2>Worker4You</h2>
-
- <img src="Slide5.png" alt="Mountains" style="width:100%">
-</div>
-
-<!-- Container -->
-<div class="w3-container" style="position:relative">
-  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
-  style="position:absolute;top:-28px;right:24px">+</a>
-</div>
-
-<!-- Pricing Row -->
-<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
-    <h2>Mais ...</h2>
-    <br>
-    <div class="w3-third w3-margin-bottom">
-      <img src="assets/aboutImg/moz3.png" alt="Mountains" style="width:100%">
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <img src="assets/aboutImg/mcel3.png" alt="Mountains" style="width:100%">
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <img src="assets/aboutImg/mzangola1.png" alt="Mountains" style="width:100%">
-    </div>
-</div>
-
-
-<!-- Work Row -->
-
-
-<div class="w3-row-padding w3-padding-64 w3-theme-l4" id="work">
-<h2>Sistemas Web - Instituto de Programação : Aulas Online</h2>
-<img src="assets/aboutImg/IP30.png" alt="EC" style="width:100%">
-
-</div>
-
-
-
-<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
-<h2>Sistemas Java : Sistema de Venda, gestão de estoque, Relatórios e Estátistica</h2>
-<img src="assets/aboutImg/Estatistica Geral.PNG" alt="EC" style="width:100%">
-
-</div>
-
-<div class="w3-row-padding w3-padding-64 w3-theme-l4" id="work">
-<h2>Sistemas Web - Coronanews</h2>
-<img src="assets/aboutImg/c1.png" alt="EC" style="width:100%">
-
-</div>
-
-<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
-<h2>Sistemas Java</h2>
-<img src="assets/aboutImg/tela splash count.PNG" alt="EC" style="width:100%">
-
-</div>
-
-
-<!-- Contact Container -->
-<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
-  <div class="w3-row">
-    <div class="w3-col m5">
-    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contacte-Nos</span></div>
-      <h3>Endereço</h3>
-      <!--<p>Swing by for a cup of coffee, or whatever.</p>-->
-      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Sofala, Beira</p>
-      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +258 84 61 51 124</p>
-      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  contacto.etapps@gmail.com</p>
-    </div>
-    <!--<div class="w3-col m7">
-      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
-      <div class="w3-section">      
-        <label>Nome</label>
-        <input class="w3-input" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">      
-        <label>Email</label>
-        <input class="w3-input" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">      
-        <label>Mensagem</label>
-        <input class="w3-input" type="text" name="Message" required>
-      </div>  
-     
-      <button type="submit" class="w3-button w3-right w3-theme">Enviar</button>
-      </form>
-    </div>-->
-  </div>
-</div>
-
-<!-- Image of location/map -->
-<!--<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">-->
-
-<!-- Footer -->
 <footer class="w3-container w3-padding-32  w3-center" style="background-color: black;">
-  <h4>Follow Us</h4>
+  <!-- <h4>Follow Us</h4>
   <a class="w3-button w3-large w3-teal" href="https://web.facebook.com/Euler-Corporation-333596494253972" title="Facebook"><i class="fa fa-facebook"></i></a>
- <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/eulercorporation/" title="Google +"><i class="fa fa-instagram"></i></a>
-  <p>Powered by <a href="#" target="_blank" style="color: white">Euler Corporation</a></p>
+ <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/eulercorporation/" title="Google +"><i class="fa fa-instagram"></i></a> -->
 
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   

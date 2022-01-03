@@ -158,7 +158,7 @@ criarProdutos = function (todosProdutos) {
 
             console.log(element.imagem_principal);
             let tes = $(`<div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-                                <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
+                                <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;height: 20rem;" >
                                 <img class="card-img-top" src="`+element.imagem_principal+`" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">`+element.preco+`</h5>
@@ -318,12 +318,13 @@ criarConteudoDeProduto = function (element)
 
 criarConteudoDePagemnto = function (element)
 {
+    $('#conteudo-modal-pagamentos').empty()
     $('#conteudo-modal-pagamentos').append(`
     <div class="container py-5">
     <!-- For demo purpose -->
     <div class="row mb-4">
         <div class="col-lg-8 mx-auto text-center">
-            <h1 class="display-6">Bootstrap Payment Forms</h1>
+            <h1 class="display-6">Payment Form</h1>
         </div>
     </div> <!-- End -->
     <div class="row">
@@ -400,10 +401,11 @@ criarConteudoDePagemnto = function (element)
                 </div>
             </div>
         </div>
+        <button type="button" data-dismiss="modal" class="btn btn-dark btn-block shadow-sm"> Close Payment</button>
     </div>
     `);
 
-    let button_pagar = $('<button type="button" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button>');
+    let button_pagar = $('<button type="button" class="btn btn-primary " ><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button>');
 
 
     //Para adicionar botao com funcionalidade

@@ -171,7 +171,8 @@ const clickGo = function (a) {
 					// '<h2 class="w3-text-grey w3-padding-16 alltext"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experiencia de Trabalho<label id="lblCExperiencia" for="show-dialogExperiencia"><i class="fa fa-edit fa-fw w3-margin-left w3-large w3-text-teal"></i></label></h2>' +
 					// '<div class="w3-container">' +
 					// '<p class="alltext" id="editLExperiencia">Trabalhou com :' + alo + '</p>' +
-					// '<hr>' +
+					'<hr>' +
+					'<button style="width: 100%;margin-bottom: 4rem;" onclick="sair_log()" class="btn btn-primary">Logout</button>' +
 
 					'</div>');
 
@@ -1125,6 +1126,18 @@ function adicionarProduto() {
 		alert("Ocorreu um erro")
         console.log('Ocorreu um erro', error);
     })
+}
+
+function sair_log(){
+	firebase.auth().signOut().then(() => {
+		// Sign-out successful.
+		window.open("login.html", "_self")
+		// console.log("Logout com sucesso");
+
+	  }).catch((error) => {
+		// An error happened.
+		console.log("Erro no logout ",error);
+	  });
 }
 
 

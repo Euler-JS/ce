@@ -478,6 +478,6 @@ const getCarinho = function()
     //     });
 }
 
-login2();
+// login2();
 renderProdutos("todos");
 // adicionarProduto();

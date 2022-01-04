@@ -159,7 +159,7 @@ criarProdutos = function (todosProdutos) {
             console.log(element.imagem_principal);
             let tes = $(`<div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
                                 <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;height: 20rem;" >
-                                <img class="card-img-top" src="`+element.imagem_principal+`" alt="Card image cap">
+                                <img class="card-img-top" style="height: 10rem;" src="`+element.imagem_principal+`" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">`+element.preco+`</h5>
                                     <p class="card-text">`+element.marca+`</p>
@@ -287,7 +287,7 @@ criarConteudoDeProduto = function (element)
 
         $('#container-li').append(
             `
-            <li id="li`+cont+`"><a data-target="#showImage"  data-toggle="tab"><img src="`+element+`" /></a></li>
+            <li id="li`+cont+`"><a data-target="#showImage"  data-toggle="tab"><img class="img_visualizar" src="`+element+`" /></a></li>
             `
         )
 

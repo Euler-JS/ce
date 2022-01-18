@@ -56,7 +56,7 @@ const clickGo = function (a) {
 	let button_closePerfil = $('<div" style="width:100%;">' +
 		'<progress id="uploaderFull" value="0" max="100" style="display:none;width:100%;">0%</progress>' +
 		'<input type="file" id="inputFileFull" multiple="multiple"  accept="image/*" value="uploaderFull"  style="display:none;">' +
-		'<label for="inputFileFull" class="w3-card w3-button" style="color:white; background-color:#f5af09;margin-bottom:5%; width: 100%">Adicionar Foto de Trabalho</label>' +
+		'<label for="inputFileFull" class="w3-card w3-button" style="color:white; background-color:#f5af09;margin-bottom:5%; width: 100%">Adicionar outras fotos</label>' +
 		'</div>');
 	let button_closePerfil1 = $('<div class="container">' +
 		'<span onclick="clickClose()" class="closebtn-galeria">&times;</span>' +
@@ -199,11 +199,17 @@ const clickGo = function (a) {
 				  <input type="text" class="form-control" id="unidades"  placeholder="Digite o numero de unidades disponiveis">
 				</div>
 
+				<div class="form-group">
+				  <label for="descricao">Descrição</label>
+				  <textarea class="form-control" id="descricao"  placeholder="Descrição"></textarea>
+				</div>
+
 
 				<div class="form-group">
 				<label for="imagem_principal">Imagem principal</label>
 				<input readonly type="text" class="form-control" id="imagem_principal"  placeholder="imagem principal">
 			  </div>
+			  
 
 			  <div class="form-group">
 			  <label for="outras_imagens">Outras imagens</label>
@@ -1105,6 +1111,7 @@ function adicionarProduto() {
         marca: ""+$('#marca').val(),
         preco: ""+$('#preco').val(),
         total_unidades: ""+$('#unidades').val(),
+		descricao: ""+$('#descricao').val(),
         unidades_vendidas: "0",
         imagem_principal: ""+$('#imagem_principal').val(),
         outras_imagens: ""+$('#outras_imagens').val(),

@@ -211,7 +211,7 @@ criarProdutos = function (todosProdutos) {
 criarConteudoDeProduto = function (element)
 {
     $('#conteudo-modal').empty()
-    // console.log(element);
+    console.log(element);
     
     $('#conteudo-modal').append(`
     <div class="container">
@@ -244,11 +244,7 @@ criarConteudoDeProduto = function (element)
                         </div>
                         <span class="review-no">41 reviews</span>
                     </div>
-                    <p class="product-description">A Toyota é conhecida por produzir carros, no entanto tem muitas Empresas de outros ramos de atividade:
-
-                    -Produção e venda de barcos e respetivos motores e produção de empilhadores e outros equipamentos industriais.
-                    
-                    -Setor imobiliário. Desde 1975 constrói casas, estando em constante evolução o desenvolvendo de novas técnicas de construção, criação de condomínios, assim como projetos de habitação para arrendamento pela Toyota Housing Corporation que a partir da 2004 constituiu-se uma Empresa autónoma.</p>
+                    <p class="product-description">`+element.descricao+`</p>
                     <h4 class="price">Preco actual: <span>`+element.preco+`</span></h4>
                     <p class="vote"> <strong>Total no stock (`+element.total_unidades+`)</strong></p>
                     

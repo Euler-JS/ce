@@ -296,7 +296,7 @@ criarConteudoDeProduto = function (element)
 
         cont = cont + 1
     });
-    let button_carrinho = $('<button  class="add-to-cart btn btn-default" type="button">Adicionar ao Carinho</button>');
+    let button_carrinho = $('<button style="margin-right: 4px"  class="add-to-cart btn btn-default" type="button">Adicionar ao Carinho</button>');
     let button_pagar = $('<button data-toggle="modal" data-target="#exampleModalLong-pagamentos" class="add-to-cart btn btn-default" type="button">Efectuar pagamento</button>');
 
     button_carrinho.on('click', () => {

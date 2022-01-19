@@ -4,7 +4,7 @@ let letras = ["A", "B", "C", "D", "Z", "XC", "SA", "SW", "D", "EW", "PO", "KL", 
 let todosProdutos = [];
 let todosProdutosFiltros = [];
 var workerSelecionado;
-let meuCarinho;
+let meuCarinho="";
 function login2() {
 
 
@@ -296,10 +296,13 @@ criarConteudoDeProduto = function (element)
 
         cont = cont + 1
     });
-
+    let button_carrinho = $('<button  class="add-to-cart btn btn-default" type="button">Adicionar ao Carinho</button>');
     let button_pagar = $('<button data-toggle="modal" data-target="#exampleModalLong-pagamentos" class="add-to-cart btn btn-default" type="button">Efectuar pagamento</button>');
 
-
+    button_carrinho.on('click', () => {
+        adicionarCarinho(element.codigo)
+         
+     });
     //Para adicionar botao com funcionalidade
     button_pagar.on('click', () => {
        criarConteudoDePagemnto(element)
@@ -308,7 +311,7 @@ criarConteudoDeProduto = function (element)
 
     // tes.append(button_pagar);
 
-
+    $('#pagamento').append(button_carrinho);
     $('#pagamento').append(button_pagar);
 }
 
@@ -421,18 +424,40 @@ criarConteudoDePagemnto = function (element)
 
 const adicionarCarinho = function(element)
 {
-    db.collection('utilizadores').doc(idUser).update({carino:url})
+    console.log(meuCarinho, meuCarinho.length);
+   
+    
+    if(meuCarinho === "" || meuCarinho.length<=0)
+    {
+        console.log("2 ",meuCarinho);
+        meuCarinho = element
+        console.log("2 ",meuCarinho);
+
+    }
+    else
+    {
+        console.log("2 ",meuCarinho);
+        meuCarinho = element + ","+ meuCarinho
+        console.log("2 ",meuCarinho);
+    }
+   
+    db.collection('utilizadores').doc(idUser).update({carinho:meuCarinho})
     .then(()=>
     {
-        console.log('Foto perfil Actualizada com Sucesso');
+        // console.log('Foto perfil Actualizada com Sucesso');
         document.getElementById('perfilTag').src=url;
         //renderTrabalhadores();
         //toggleTarefaArray(element);
 
     }).catch(error=>
         {
-            console.log('Ocorreu um erro',error);
+            // console.log('Ocorreu um erro',error);
+            // db.collection("utilizadores").doc(idUser).update({
+            //     carinho: ""+meuCarinho
+            // })
         })
+
+        getCarinho()
 }
 
 const getCarinho = function()

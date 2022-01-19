@@ -406,7 +406,7 @@ criarConteudoDePagemnto = function (element)
 
     //Para adicionar botao com funcionalidade
     button_pagar.on('click', () => {
-        $.get(" https://8ed8-197-235-216-24.ngrok.io/api/testar_pagamentos/258"+$("#numeroCelular").val()+"-"+element.preco, function(data, status){
+        $.get("https://e76d-197-249-81-60.ngrok.io/api/testar_pagamentos/258"+$("#numeroCelular").val()+"-"+element.preco, function(data, status){
             console.log("Dados ", data);
             console.log("Dados 2 ", JSON.stringify(data));
           });

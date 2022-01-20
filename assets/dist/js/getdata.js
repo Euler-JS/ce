@@ -3,6 +3,7 @@ let letras = ["A", "B", "C", "D", "Z", "XC", "SA", "SW", "D", "EW", "PO", "KL", 
 
 let todosProdutos = [];
 let todosProdutosFiltros = [];
+let todasMarcas = []
 var workerSelecionado;
 let meuCarinho="";
 function login2() {
@@ -69,6 +70,33 @@ const renderProdutos = function (ver) {
                 todosProdutos.push(singleProduto);
                 todosProdutosFiltros.push(singleProduto);
                 console.log('Go ' + singleProduto.codigo);
+
+                console.log(todasMarcas.findIndex(function go(name){
+                    return name = singleProduto.marca
+                }))
+               
+                if(!todasMarcas.includes(singleProduto.marca))
+                {
+                    todasMarcas.push(singleProduto.marca)
+                    console.log("### "+singleProduto.marca.split(" "));
+                    let name=""
+                    singleProduto.marca.split(" ").forEach(element => {
+                        name = name + element
+                    });
+                    console.log(singleProduto.marca.replace('"',''));
+
+                $("#myUL").append(`<li onclick=(verProdutosMarca("`+name+`")) id="pesquisa_`+todasMarcas.length+`"><a>`+singleProduto.marca+`</a></li>`)
+                $("#pesquisa_"+todasMarcas.length).click(function () {
+
+                    new verProdutosMarca(singleProduto.marca)
+                     // renderProdutos(singleProduto.marca)
+                 });
+                }
+
+                // let t = 
+
+               
+
             });
 
             criarProdutos(todosProdutosFiltros);
@@ -82,14 +110,17 @@ const renderProdutos = function (ver) {
                 const singleUtilizador = element.data();
                 //console.log("dff " +singleUtilizador.trabalhoU);
                 //| singleUtilizador.experienciaDeTrabalhoU.search(ver)>=0
-                if (singleUtilizador.trabalhoU.search(ver) >= 0) {
-                    // todosUtilizadores.push(singleUtilizador);
-                    // todosUtilizadoresFiltros.push(singleUtilizador);
-                    console.log('Go ' + element.nomeU);
+                todosProdutosFiltros = []
+                console.log(singleUtilizador.marca);
+                if (singleUtilizador.marca.search(ver) >= 0) {
+                    // alert("A")
+                    todosProdutos.push(singleUtilizador);
+                    todosProdutosFiltros.push(singleUtilizador);
+                    console.log('Go ' + element.marca);
                 }
             });
 
-            // criarTrabalhadores(todosUtilizadoresFiltros);
+            criarProdutos(todosProdutosFiltros);
         });
 
 
@@ -140,10 +171,11 @@ function adicionarProduto() {
     })
 }
 
-criarProdutos = function (todosProdutos) {
+criarProdutos = function (produtosRecidos) {
 
-    if (todosProdutosFiltros.length >= 1) {
-        todosProdutosFiltros.forEach(element => {
+    if (produtosRecidos.length >= 0) {
+        $('#produtos_container').empty()
+        produtosRecidos.forEach(element => {
 
             var pf;
 
@@ -502,3 +534,45 @@ const getCarinho = function()
 // login2();
 renderProdutos("todos");
 // adicionarProduto();
+
+function myFunction() {
+
+    console.log("Input ", $("#myInput").val().length);
+
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+
+    if($("#myInput").val().length == 0)
+    {
+        $("#myUL").css({"display": "none"})
+        criarProdutos(todosProdutos);
+    }
+    else
+    {
+        $("#myUL").css({"display": "block"})
+    }
+}
+
+const verProdutosMarca = function(marca)
+{
+    let tempProd = todosProdutos
+    console.log("Filtro inicial ", tempProd);
+    tempProd = tempProd.filter(produto => produto.marca.replace('"','') == marca)
+
+    // todosProdutos = todosProdutos.filter(produto => produto.marca != marca)
+    console.log("Tdos proddutos ",marca, tempProd);
+    criarProdutos(tempProd);
+}

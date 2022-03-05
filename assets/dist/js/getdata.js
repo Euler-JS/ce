@@ -6,6 +6,9 @@ let todosProdutosFiltros = [];
 let todasMarcas = []
 var workerSelecionado;
 let meuCarinho="";
+
+// let ss = '1{"numero":"258846151124","valor_pago":"1000000","estado":true}'
+// console.log(JSON.parse(ss.substring(1)));
 function login2() {
 
 
@@ -441,10 +444,77 @@ criarConteudoDePagemnto = function (element)
 
     //Para adicionar botao com funcionalidade
     button_pagar.on('click', () => {
-        $.get("https://e76d-197-249-81-60.ngrok.io/api/testar_pagamentos/258"+$("#numeroCelular").val()+"-"+element.preco, function(data, status){
-            console.log("Dados ", data);
-            console.log("Dados 2 ", JSON.stringify(data));
-          });
+        // $.get("https://e76d-197-249-81-60.ngrok.io/api/testar_pagamentos/258"+$("#numeroCelular").val()+"-"+element.preco, function(data, status){
+        //     console.log("Dados ", data, status);
+        //     console.log("Dados 2 ", JSON.stringify(data));
+        //     alert("Dados + "+JSON.stringify(data))
+        //   }).then(res=>{
+        //       console.log("Resultado ",res);
+        //   });
+        // fetch("https://e76d-197-249-81-60.ngrok.io/api/testar_pagamentos/258"+$("#numeroCelular").val()+"-"+element.preco).then(function(response) {
+        //     return response;
+        //   }).then(function(data) {
+        //     console.log(data);
+        //   }).catch(function(data) {
+        //     console.log("Booo ",data);
+        //   });
+        var HttpClient = function() {
+            this.get = function(aUrl, aCallback) {
+                var anHttpRequest = new XMLHttpRequest();
+                anHttpRequest.onreadystatechange = function() { 
+                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                        aCallback(anHttpRequest.responseText);
+                }
+        
+                anHttpRequest.open( "GET", aUrl, true );            
+                anHttpRequest.send( null );
+            }
+        }
+
+        var client = new HttpClient();
+client.get("https://e76d-197-249-81-60.ngrok.io/api/testar_pagamentos/258"+$("#numeroCelular").val()+"-"+element.preco, function(response) {
+    let data_returned = JSON.parse(response.substring(1))
+    if(data_returned.estado)
+    {
+        db.collection('utilizadores').doc(idUser).update({pagamentos:meuCarinho})
+    .then(()=>
+    {
+        // console.log('Foto perfil Actualizada com Sucesso');
+        document.getElementById('perfilTag').src=url;
+        //renderTrabalhadores();
+        //toggleTarefaArray(element);
+
+    }).catch(error=>
+        {
+            // console.log('Ocorreu um erro',error);
+            // db.collection("utilizadores").doc(idUser).update({
+            //     carinho: ""+meuCarinho
+            // })
+        })
+
+    }
+    else
+    {
+        alert("Ocorreu um erro na tranferencia do valor, por favor tente novamente")
+    }
+    
+    // do something with response
+});
+
+    //     $.ajax({
+    //         url: "https://e76d-197-249-81-60.ngrok.io/api/testar_pagamentos/258"+$("#numeroCelular").val()+"-"+element.preco,
+    //         timeout:30000,
+    //         method: 'GET',
+    //     }).done(function(){
+    //         //do something
+    //         alert("Deu erro")
+    //     }).fail(function(jqXHR, textStatus){
+    //         if(textStatus === 'timeout')
+    //         {     
+    //             alert('Failed from timeout'); 
+    //             //do something. Try again perhaps?
+    //         }})
+        
         
     });
 

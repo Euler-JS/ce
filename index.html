@@ -7,25 +7,16 @@
   <meta name="description" content="">
   <meta name="author" content="Euler Corporation">
   <meta name="generator" content="Jekyll v4.0.1">
-  <title>Workers4You</title>
+  <title>AUTO TUNGAZA</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
 
-  <!-- Bootstrap core CSS -->
   <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
-  <!-- <link href="assets/dist/css/workersCard.css" rel="stylesheet">
-  <link href="assets/dist/css/blog.css" rel="stylesheet">
-  <link href="assets/dist/css/slideperfil.css" rel="stylesheet">
-  <link href="assets/dist/css/w3css.css" rel="stylesheet"> -->
+  <link href="assets/dist/css/detalhes-produto.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
 
-  <!-- <link href="w4.css" rel="stylesheet"> -->
   <link href="w4.css" rel="stylesheet">
-
-  <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
-
-
-
-
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -44,24 +35,12 @@
     .form-tt {
       float: left;
     }
-
-
-    .logar {
-      /*background-image: url("t4.png");
-            background-repeat: space;*/
-
-    }
-
     .form-in {
       border-radius: 30px;
     }
 
     body {
       font-family: sans-serif;
-
-      /* background-image: url("t.png");
-            background-repeat: space;*/
-
     }
 
     .b {}
@@ -71,29 +50,73 @@
         font-size: 3.5rem;
       }
     }
+
+    .rounded {
+      border-radius: 1rem
+    }
+
+    .nav-pills .nav-link {
+      color: #555
+    }
+
+    .nav-pills .nav-link.active {
+      color: white
+    }
+
+    input[type="radio"] {
+      margin-right: 5px
+    }
+
+    .bold {
+      font-weight: bold
+    }
   </style>
 
-
-  <!-- Custom styles for this template -->
-  <!--<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>-->
-  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-  <!-- Custom styles for this template -->
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  
+  #myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+  
+  #myUL li a:hover:not(.header) {
+    background-color: #eee;
+  }
+  </style>
   <link href="assets/dist/css/card.css" rel="stylesheet">
-
 </head>
 
 <body id="lol ">
-
-
-
-
-
   <div class="container">
-
     <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
       <!-- Brand -->
-      <a class="navbar-brand b" href="index.html">W4You</a>
+      <a class="navbar-brand b" href="index.html">AUTO TUNGAZA</a>
 
       <!-- Toggler/collapsibe Button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -103,15 +126,15 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active b" style="color:cyan" href="#">Home</a>
+            <a class="nav-link active b" style="color:cyan" href="index.html">Home</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link b" style="color:white" href="workers.html">Workers</a>
           </li>
           <li class="nav-item">
             <a class="nav-link b" style="color:white" href="vagas.html">Vagas de Emprego</a>
           </li>
-
+ -->
           <li class="nav-item">
             <a class="nav-link b" style="color:white" href="meuPerfil.html">Meu Perfil</a>
           </li>
@@ -120,9 +143,18 @@
             <a class="nav-link b" style="color:white" href="sobre.html">Sobre nós</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item justify-content-end">
             <a class="nav-link b" style="color:white" href="login.html">Login</a>
           </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <i style="color: antiquewhite;" class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span
+              id="totalCarinho" style="color: antiquewhite; margin-left: 10px;">0</span>
+            <!-- <li class="nav-item">
+              <a class="nav-linkb" href="#">Link</a>
+          </li> -->
         </ul>
 
 
@@ -132,154 +164,73 @@
 
 
     </nav>
-
   </div>
-
-
-
   <!-- Header -->
   <div class="w3-display-container w3-center containerImageButton" style="width:100%;" id="home">
-    <!--<div class=" mx-auto d-block btnImageButtonGo">
-                    <img src="assets/img/icon/eucorp.jpg" style="width: 40px; height: auto;margin-top: 25px; " class="bd-placeholder-img rounded-circle mdl-spinner mdl-js-spinner is-active">
-                  </div>-->
-    <!-- <img class="w3-image img-fluid" src="w18.png" alt="Loading ..." style="width: 100%; height: auto;"> -->
-    <!-- <button class="btnImageButton" style="color: white; background-color: red; margin-top: 15%;"><a href="#startWorker"
-        style="color: white">Mais informações</a></button> -->
   </div>
-
-
   <div>
     <img class="w3-image" src="w1.jpg" alt="Hamburger Catering" style="width: 100%; height: auto;">
   </div>
 
+  <div>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pesquisar pela marca.." title="Type in a name">
+    <ul id="myUL" style="display: none;">
+      <!-- <li><a href="#">Adele</a></li>
+      <li><a href="#">Agnes</a></li>
+    
+      <li><a href="#">Billy</a></li>
+      <li><a href="#">Bob</a></li>
+    
+      <li><a href="#">Calvin</a></li>
+      <li><a href="#">Christina</a></li>
+      <li><a href="#">Cindy</a></li> -->
+    </ul>
+  </div>
   <div class="container">
     <div class="row " id="produtos_container">
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-             <button id="click_me" onclick="adicionarProduto()" style="border-radius:1px; width:100%; font-size:14px;" class="btn btn-primary">Ver Perfil</button>
-           </div>
-         </div>
-      </div>
-
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-           </div>
-         </div>
-      </div>
-
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-           </div>
-         </div>
-      </div>
-
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-           </div>
-         </div>
-      </div>
-
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-           </div>
-         </div>
-      </div>
-
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-           </div>
-         </div>
-      </div>
-
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-           </div>
-         </div>
-      </div>
-
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-           </div>
-         </div>
-      </div>
-
-      <div class="col-3 mb-2 mt-2" style=" margin-right: -6px;">
-        <div class=" mx-auto d-block   card shadow bg-white rounded cars" style="margin-right: 100px;" >
-          <img class="card-img-top" src="car.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title">25 000 MT</h5>
-             <p class="card-text">Mazda 2000</p>
-             <a href="#" class="btn btn-primary">Ver Detalhes</a>
-           </div>
-         </div>
-      </div>
-
-
-      
-    
-      
-      
     </div>
   </div>
 
 
- 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-body" id="conteudo-modal">
+    </div>
+    <div class="modal-dialog" role="document" style="width: 200%; display:none;">
+      <div class="modal-content">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-
-
-
+  <div class="modal fade" id="exampleModalLong-pagamentos" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle-pagamentos" aria-hidden="true">
+    <div class="modal-body" id="conteudo-modal-pagamentos">
+    </div>
+    <div class="modal-dialog" role="document" style="width: 200%; display:none;">
+      <div class="modal-content">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <footer class="blog-footer w3-black" style="background-color: w3-dark">
-    <p><strong>Desenvolvido Por Euler Corporation</strong></p>
+    <!-- <p><strong>Desenvolvido Por Euler Corporation</strong></p> -->
     <p><a href="sobre.html">Sobre nós</a></p>
     <p>
       <a href="#">Back to top</a>
     </p>
 
-    <p class="copyright"> Direitos Autorais &copy; 2020 Todos direitos reservados. Desenvolvido por João Alberto José
-      Simango <br>
+    <p class="copyright"> Direitos Autorais &copy; 2022 Todos direitos reservados. Desenvolvido por Pedro e Fazenda <br>
 
     </p>
   </footer>
@@ -311,32 +262,8 @@
       firebase.auth().signOut();
     }
   </script>
-
   <script src="./assets/dist/js/getdata.js"></script>
-
-
-
-
-
-
   <script type="text/javascript" src="assets/dist/js/jquery.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-
-    </script>
-
-
-
-  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
   <script src="assets/dist/js/bootstrap.bundle.js"></script>
-
-  <!--<script type="text/javascript" src="auth.js"></script>-->
-  
-
-
 </body>
-
-
-
 </html>

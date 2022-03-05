@@ -145,7 +145,7 @@ $("#criarContaLogin").click(
 								 if (user) {
 								 	console.log("indo criar conta");
 								 	//console.log(idUser+" 00 "+emailUser);
-								 	alert("Foi enviando um email de confirmação para ti. Verifique a tua caixa de email, e valide a sua conta. #Worker4You");
+								 	alert("Foi enviando um email de confirmação para ti. Verifique a tua caixa de email, e valide a sua conta. #AUTO TUNGAZA");
 								 	//$("#formLogin").remove();
 
 								 	$("#formLogin").remove();
@@ -155,7 +155,7 @@ $("#criarContaLogin").click(
 								{
 									console.log("Conta não Criada");
 								}
-							}).catch(error => console.log);
+							}).catch(error => alert("Existe uma conta com esse Email. Caso nao se lembre da senha, clique em recuperar password."));
 						
 
 

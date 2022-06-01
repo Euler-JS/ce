@@ -1555,10 +1555,10 @@ function loadArtyomSetups() {
     window.onload = function startContinuousArtyom() {
         artyom.initialize({
             lang: "pt-BR",
-            continuous: false,
+            continuous: true,
             executionKeyword: "Euler",
-            debug: false,
-            mode: quick,
+            debug: true,
+            mode: normal,
             soundex: true,
             listen: true
         }).then(function () {

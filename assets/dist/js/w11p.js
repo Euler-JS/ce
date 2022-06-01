@@ -1558,7 +1558,7 @@ function loadArtyomSetups() {
             continuous: true,
             executionKeyword: "Euler",
             debug: true,
-            mode: normal,
+            mode: 'normal',
             soundex: true,
             listen: true
         }).then(function () {

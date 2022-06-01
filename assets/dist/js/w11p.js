@@ -1558,7 +1558,7 @@ function loadArtyomSetups() {
             continuous: true,
             executionKeyword: "Euler",
             debug: true,
-            mode: "normal",
+            mode: normal,
             soundex: true,
             listen: true
         }).then(function () {
@@ -1740,16 +1740,35 @@ function loadArtyomSetups() {
             }
         ]);
 
-        artyom.on(['Diga o *'], true).then(function (i, wildcard) {
-            if (wildcard == "menu") {
-                console.log("Ver menu");
-                lerMenu()
-            }
-            if (wildcard == "rodapé") {
-                lerRodape()
+        //Comandos para  ler menu e rodapé
+        artyom.addCommands([
+            {
+                indexes: ["Ler menu, Ler o Menu, Informe o menu, Diga o menu"],
+                action: function (i) {
+                    lerMenu()
+                }
+            },
 
+            {
+                indexes: ["Ler rodapé, Ler o rodapé, Informe o rodapé, Diga o rodapé"],
+                action: function (i) {
+                    lerRodape()
+                }
             }
-        });
+        ])
+
+        // artyom.on(['Diga o *'], true).then(function (i, wildcard) {
+        //     if (wildcard == "menu") {
+        //         console.log("Ver menu");
+        //         lerMenu()
+        //     }
+        //     if (wildcard == "rodapé") {
+        //         lerRodape()
+
+        //     }
+        // });
+
+
 
         // Comandos Abrir Janelas
         artyom.on(['abrir *'], true).then(function (i, wildcard) {

@@ -12129,7 +12129,7 @@
             e
         }
         function I(t) {
-                alert("A12");
+            console.log("ARRRRI");
             let e = {};
             return t.forEach(t=>{
                 e = null != t ? Object.assign(Object.assign({}, e), t) : e
@@ -35568,7 +35568,6 @@
             }
         }
         function P(t, e, n) {
-                alert("Alo1");
             let r;
             return t instanceof Map ? (r = t.get(e),
             r || t.set(e, r = n)) : (r = t[e],
@@ -37054,7 +37053,7 @@
                   , s = this._animations[t];
                 let i;
                 const o = new Map;
-                    alert("Alo2");
+                
                 if (s ? (i = Nt(this._driver, e, s, q, Y, {}, {}, n, Qt, r),
                 i.forEach(t=>{
                     const e = P(o, t.element, {});
@@ -37973,7 +37972,6 @@
                 const r = e.element
                   , s = e.isRemovalTransition ? void 0 : t
                   , i = e.isRemovalTransition ? void 0 : e.triggerName;
-                    alert("Alo3");
                 for (const o of e.timelines) {
                     const t = o.element
                       , a = t !== r
